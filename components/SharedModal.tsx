@@ -199,7 +199,7 @@ export default function SharedModal({
                             ? 'brightness-110 hover:brightness-110'
                             : 'brightness-50 contrast-125 hover:brightness-75'
                         } h-full transform object-cover transition`}
-                        src={`https://bungtemin.net/images/imgthumb/${imgid}/180/120`}
+                        src={`${filepath}`}
                       />
                     </motion.button>
                   ))}

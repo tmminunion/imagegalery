@@ -35,7 +35,7 @@ export default function Carousel({
         onClick={closeModal}
       >
         <Image
-          src={currentPhoto.blurDataUrl}
+          src="https://bungtemin.net/news/wp-content/uploads/2023/02/6782e203b7b7c5c8de748e3798c08f2c.jpg"
           className="pointer-events-none h-full w-full"
           alt="blurred background"
           fill

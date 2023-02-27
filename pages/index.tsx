@@ -27,7 +27,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   const [lastViewedPhoto, setLastViewedPhoto] = useLastViewedPhoto()
 
   const lastViewedPhotoRef = useRef<HTMLAnchorElement>(null)
-console.log(router.query.page)
+// console.log(router.query.page)
   useEffect(() => {
     // This effect keeps track of the last viewed photo in the modal to keep the index page in sync when the user navigates back
     if (lastViewedPhoto && !photoId) {
@@ -120,7 +120,7 @@ export default Home
 
 export async function getServerSideProps(context) {
   const { params } = context
-  
+
   let reducedResults: ImageProps[] = []
   const results = await getdata(2)
 

@@ -72,7 +72,7 @@ export default function SharedModal({
                 className="absolute"
               >
                 <Image
-                  src={`${currentImage.format}`}
+                  src={`${currentImage.filepath}`}
                   width={navigation ? 1280 : 1920}
                   height={navigation ? 853 : 1280}
                   priority
@@ -114,7 +114,7 @@ export default function SharedModal({
               <div className="absolute top-0 right-0 flex items-center gap-2 p-3 text-white">
                 {navigation ? (
                   <a
-                    href={`${currentImage.format}`}
+                    href={`${currentImage.filepath}`}
                     className="rounded-full bg-black/50 p-2 text-white/75 backdrop-blur-lg transition hover:bg-black/75 hover:text-white"
                     target="_blank"
                     title="Open fullsize version"
@@ -136,8 +136,8 @@ export default function SharedModal({
                 <button
                   onClick={() =>
                     downloadPhoto(
-                      `${currentImage.format}`,
-                      `${currentImage.format}`
+                      `${currentImage.filepath}`,
+                      `${currentImage.filepath}`
                     )
                   }
                   className="rounded-full bg-black/50 p-2 text-white/75 backdrop-blur-lg transition hover:bg-black/75 hover:text-white"
@@ -168,7 +168,7 @@ export default function SharedModal({
                 className="mx-auto mt-6 mb-6 flex aspect-[3/2] h-14"
               >
                 <AnimatePresence initial={false}>
-                  {filteredImages.map(({ format, id }) => (
+                  {filteredImages.map(({ filepath, imgid, id }) => (
                     <motion.button
                       initial={{
                         width: '0%',
@@ -199,7 +199,7 @@ export default function SharedModal({
                             ? 'brightness-110 hover:brightness-110'
                             : 'brightness-50 contrast-125 hover:brightness-75'
                         } h-full transform object-cover transition`}
-                        src={`${format}`}
+                        src={`https://bungtemin.net/images/imgthumb/${imgid}/180/120`}
                       />
                     </motion.button>
                   ))}

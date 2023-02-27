@@ -11,7 +11,7 @@ const Home: NextPage = ({ currentPhoto }: { currentPhoto: ImageProps }) => {
   const { photoId } = router.query
   let index = Number(photoId)
 
-  const currentPhotoUrl = `${currentPhoto.format}`
+  const currentPhotoUrl = `${currentPhoto.filepath}`
   return (
     <>
       <Head>
@@ -39,8 +39,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
       height: result.height,
       width: result.width,
       public_id: result.id,
-      yui: result.imgid,
-      format: result.filepath,
+      imgid: result.imgid,
+      filepath: result.filepath,
     })
     i++
   }

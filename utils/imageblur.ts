@@ -13,7 +13,7 @@ export default async function getBase64ImageUrl(
     return url
   }
   const response = await fetch(
-    `https://bungtemin.net/images/imgthumb/${image.yui}/400/400`
+    `${image.filepath}`
   )
   const buffer = await response.arrayBuffer()
   const minified = await imagemin.buffer(Buffer.from(buffer), {

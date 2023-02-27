@@ -82,7 +82,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               UPLOAD IMAGE
             </a>
           </div>
-          {images.map(({ id, format,blurDataUrl }) => (
+          {images.map(({ id, filepath,blurDataUrl }) => (
             <Link
               key={id}
               href={`/?photoId=${id}`}
@@ -97,7 +97,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                 style={{ transform: 'translate3d(0, 0, 0)' }}
                 placeholder="blur"
                 blurDataURL={blurDataUrl}
-                src={`${format}`}
+                src={`${filepath}`}
                 width={720}
                 height={480}
                 sizes="(max-width: 640px) 100vw,
@@ -131,8 +131,8 @@ export async function getServerSideProps(context) {
       height: result.height,
       width: result.width,
       public_id: result.id,
-      yui: result.imgid,
-      format: result.filepath,
+      imgid: result.imgid,
+      filepath: result.filepath,
     })
     i++
   }

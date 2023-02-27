@@ -4,6 +4,7 @@ export interface ImageProps {
   height: string
   width: string
   public_id: string
+  yui: string
   format: string
   blurDataUrl?: string
 }

@@ -116,10 +116,7 @@ export default Home
 export async function getStaticProps() {
    const res = await fetch(`https://bungtemin.net/images/api`)
    const results = await res.json()
-
   let reducedResults: ImageProps[] = []
-  
-
   let i = 0
     for (let result of results.image) {
     reducedResults.push({

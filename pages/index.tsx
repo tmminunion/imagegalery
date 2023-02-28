@@ -118,7 +118,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
 
 export default Home
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const { params } = context
 
   let reducedResults: ImageProps[] = []

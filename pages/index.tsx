@@ -112,7 +112,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
 
 export default Home
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
    const res = await fetch(`https://bungtemin.net/images/api`)
    const results = await res.json()
 
@@ -146,4 +146,8 @@ const blurImagePromises = results.image.map((image: ImageProps) => {
     },
     revalidate: 10,
   }
+}
+
+export const config = {
+  runtime: 'experimental-edge',
 }

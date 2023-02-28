@@ -142,7 +142,7 @@ const blurImagePromises = results.image.map((image: ImageProps) => {
     props: {
       images: reducedResults,
     },
-    revalidate: 10,
+    
   }
 }
 

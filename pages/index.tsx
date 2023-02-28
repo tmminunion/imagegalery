@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import { GetStaticProps } from 'next'
+
 import { Router, useRouter } from 'next/router'
 import { useEffect, useRef } from 'react'
 import Bridge from '../components/Icons/Bridge'
@@ -113,7 +113,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
 
 export default Home
 
-export const getStaticProps: GetStaticProps = async () =>{
+export async function getStaticProps() {
    const res = await fetch(`https://bungtemin.net/images/api`)
    const results = await res.json()
 

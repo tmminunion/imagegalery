@@ -12,13 +12,7 @@ import getBase64ImageUrl from '../utils/imageblur'
 import type { ImageProps } from '../utils/types'
 import { useLastViewedPhoto } from '../utils/useLastViewedPhoto'
 
-async function getdata(page:number) {
-  
-   const res = await fetch(`https://bungtemin.net/images/api`)
-   const dodol = res.json()
 
-return dodol;
- }
 
 
 const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
@@ -118,11 +112,12 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
 
 export default Home
 
-export async function getServerSideProps(context) {
-  const { params } = context
+export async function getServerSideProps() {
+   const res = await fetch(`https://bungtemin.net/images/api`)
+   const results = await res.json()
 
   let reducedResults: ImageProps[] = []
-  const results = await getdata(2)
+  
 
   let i = 0
     for (let result of results.image) {
